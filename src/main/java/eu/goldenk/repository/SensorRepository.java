@@ -5,18 +5,12 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import java.util.List;
-
 /**
  * Created by goldenk on 21/02/17.
  */
 
-public class SensorRepository {
-
-    @RepositoryRestResource(collectionResourceRel = "sensors", path = "sensors")
-    public interface PersonRepository extends PagingAndSortingRepository<Sensor, Long> {
-
-        List<Sensor> findByLastName(@Param("name") String name);
-
-    }
+@RepositoryRestResource(collectionResourceRel = "sensor", path = "sensor")
+public interface SensorRepository extends PagingAndSortingRepository<Sensor, Long> {
+    Sensor findByName(@Param("name") String name);
 }
+

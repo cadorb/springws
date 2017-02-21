@@ -7,7 +7,7 @@ public class Sensor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -26,11 +26,11 @@ public class Sensor {
         this.guid = guid;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
